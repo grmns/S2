@@ -1,0 +1,33 @@
+﻿<Window x:Class="S2.ListIngresos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:S2"
+        mc:Ignorable="d"
+        Title="ListIngresos" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!-- Tabla de Ingresos -->
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding Ingresos}" Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" Width="*"/>
+                <DataGridTextColumn Header="Placa" Binding="{Binding Placa}" Width="*"/>
+                <DataGridTextColumn Header="Turno" Binding="{Binding Turno}" Width="*"/>
+                <DataGridTextColumn Header="Conductor" Binding="{Binding Conductor}" Width="*"/>
+                <DataGridTextColumn Header="Producto" Binding="{Binding Producto}" Width="*"/>
+                <DataGridTextColumn Header="Peso" Binding="{Binding Peso}" Width="*"/>
+                <DataGridTextColumn Header="Transporte" Binding="{Binding Transporte}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!-- Botones -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Agregar" Width="80" Margin="5" Click="AddIngresos_Click"/>
+            <Button Content="Cerrar" Width="80" Margin="5" Click="Cancelar_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
